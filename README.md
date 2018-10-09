@@ -4,6 +4,8 @@
 ![Screenshot](/images/img1.png)
 
 ![Screenshot](/images/img2.png)
+
+![Screenshot](/images/img3.png)
 ``` jsx
 
 import React from 'react';
