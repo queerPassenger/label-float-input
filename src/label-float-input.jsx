@@ -9,7 +9,7 @@ export default class LabelFloatInput extends React.Component{
         this['_ref']=Math.random().toString(36).substring(9);
         this.value=props.initialValue?props.initialValue:'';
         this.label=props.label?props.label:'Enter the value';
-        this.labelPh=props.initialValue.length===0?true:false;
+        this.labelPh=props.initialValue?(props.initialValue.length===0?true:false):true;
         this.color=props.color?props.color:'#0564b2';
         
         this.style={
@@ -87,7 +87,7 @@ export default class LabelFloatInput extends React.Component{
     }
     render(){
         return(
-            <div className='label-float-input-wrapper' style={style['label-float-input-wrapper']}>
+            <div className='label-float-input-wrapper' style={this.style['label-float-input-wrapper']}>
                 <div className='field-wrapper' style={this.style['field-wrapper']}>
                     <div 
                         className={this.labelPh?'field-label-ph':'field-label-nonPh'}
