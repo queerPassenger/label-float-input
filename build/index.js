@@ -79,7 +79,7 @@ module.exports =
 	        _this['_ref'] = Math.random().toString(36).substring(9);
 	        _this.value = props.initialValue ? props.initialValue : '';
 	        _this.label = props.label ? props.label : 'Enter the value';
-	        _this.labelPh = props.initialValue.length === 0 ? true : false;
+	        _this.labelPh = props.initialValue ? props.initialValue.length === 0 ? true : false : true;
 	        _this.color = props.color ? props.color : '#0564b2';
 
 	        _this.style = {
@@ -170,7 +170,7 @@ module.exports =
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'label-float-input-wrapper', style: style['label-float-input-wrapper'] },
+	                { className: 'label-float-input-wrapper', style: this.style['label-float-input-wrapper'] },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'field-wrapper', style: this.style['field-wrapper'] },
