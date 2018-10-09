@@ -1,6 +1,6 @@
 {
   "name": "label-float-input",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "main": "build/index.js",
   "scripts": {
@@ -14,8 +14,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

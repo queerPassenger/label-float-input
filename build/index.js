@@ -81,6 +81,8 @@ module.exports =
 	        _this.label = props.label ? props.label : 'Enter the value';
 	        _this.labelPh = props.initialValue ? props.initialValue.length === 0 ? true : false : true;
 	        _this.color = props.color ? props.color : '#0564b2';
+	        _this.fontSize = props.fontSize ? props.fontSize : '15px';
+	        _this.fontFamily = props.fontFamily ? props.fontFamily : 'monospace';
 
 	        _this.style = {
 	            'label-float-input-wrapper': {
@@ -95,22 +97,25 @@ module.exports =
 	                color: _this.color,
 	                position: 'relative',
 	                top: '30px',
-	                fontSize: '13px'
+	                fontSize: _this.fontSize,
+	                fontFamily: _this.fontFamily
 	            },
 	            'field-label-nonPh': {
 	                color: _this.color,
 	                position: 'relative',
 	                top: '0px',
-	                fontSize: '12px'
+	                fontSize: _this.fontSize,
+	                fontFamily: _this.fontFamily
 	            },
 	            'field-input': {
-	                width: '250px',
+	                width: '100%',
 	                paddingTop: '8px',
 	                paddingBottom: '8px',
 	                border: '0px',
 	                borderBottom: '2px solid ' + _this.color,
 	                outline: '0px',
-	                fontSize: '13px'
+	                fontSize: _this.fontSize,
+	                fontFamily: _this.fontFamily
 	            }
 	        };
 	        return _this;
