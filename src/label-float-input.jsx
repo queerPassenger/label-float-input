@@ -7,9 +7,9 @@ export default class LabelFloatInput extends React.Component{
             _a:false,
         };
         this['_ref']=Math.random().toString(36).substring(9);
-        this.value=props.initialValue?props.initialValue:'';
+        this.value=props.value?props.value:'';
         this.label=props.label?props.label:'Enter the value';
-        this.labelPh=props.initialValue?(props.initialValue.length===0?true:false):true;
+        this.labelPh=props.value?(props.value.length===0?true:false):true;
         this.color=props.color?props.color:'#0564b2';
         this.fontSize=props.fontSize?props.fontSize:'15px';
         this.fontFamily=props.fontFamily?props.fontFamily:'monospace';
@@ -50,10 +50,10 @@ export default class LabelFloatInput extends React.Component{
         }
     }
     componentWillReceiveProps(nextProps){
-        if(nextProps.initialValue && this.props.initialValue){
-            if(nextProps.initialValue!==this.props.initialValue){
-                this.value=nextProps.initialValue;
-                this.labelPh=nextProps.initialValue.length===0?true:false;
+        if(nextProps.value && this.value){
+            if(nextProps.value!== this.value){
+                this.value=nextProps.value;
+                this.labelPh=nextProps.value.length===0?true:false;
             }
         }
         this.mutateState();
@@ -66,7 +66,7 @@ export default class LabelFloatInput extends React.Component{
     onInputChange(_obj,_key,_ref){
         _obj[_key]=this.refs[_ref].value;
         if(this.props.onChange){
-            props.onChange(this.value);
+            this.props.onChange(this.value);
         }
         this.mutateState();
     }
@@ -78,11 +78,17 @@ export default class LabelFloatInput extends React.Component{
             else{
                 _obj[_key]=false;
             }
+            if(this.props.onBlur){
+                this.props.onBlur(this.value);
+            }
         }
         else if(_type==='focus'){
             _obj[_key]=false;
             if(this.refs[_ref]){
                 this.refs[_ref].focus();
+            }
+            if(this.props.onFocus){
+                this.props.onFocus(this.value);
             }
         }
         this.mutateState();

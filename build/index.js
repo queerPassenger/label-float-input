@@ -77,9 +77,9 @@ module.exports =
 	            _a: false
 	        };
 	        _this['_ref'] = Math.random().toString(36).substring(9);
-	        _this.value = props.initialValue ? props.initialValue : '';
+	        _this.value = props.value ? props.value : '';
 	        _this.label = props.label ? props.label : 'Enter the value';
-	        _this.labelPh = props.initialValue ? props.initialValue.length === 0 ? true : false : true;
+	        _this.labelPh = props.value ? props.value.length === 0 ? true : false : true;
 	        _this.color = props.color ? props.color : '#0564b2';
 	        _this.fontSize = props.fontSize ? props.fontSize : '15px';
 	        _this.fontFamily = props.fontFamily ? props.fontFamily : 'monospace';
@@ -124,10 +124,10 @@ module.exports =
 	    _createClass(LabelFloatInput, [{
 	        key: 'componentWillReceiveProps',
 	        value: function componentWillReceiveProps(nextProps) {
-	            if (nextProps.initialValue && this.props.initialValue) {
-	                if (nextProps.initialValue !== this.props.initialValue) {
-	                    this.value = nextProps.initialValue;
-	                    this.labelPh = nextProps.initialValue.length === 0 ? true : false;
+	            if (nextProps.value && this.value) {
+	                if (nextProps.value !== this.value) {
+	                    this.value = nextProps.value;
+	                    this.labelPh = nextProps.value.length === 0 ? true : false;
 	                }
 	            }
 	            this.mutateState();
@@ -144,7 +144,7 @@ module.exports =
 	        value: function onInputChange(_obj, _key, _ref) {
 	            _obj[_key] = this.refs[_ref].value;
 	            if (this.props.onChange) {
-	                props.onChange(this.value);
+	                this.props.onChange(this.value);
 	            }
 	            this.mutateState();
 	        }
@@ -157,10 +157,16 @@ module.exports =
 	                } else {
 	                    _obj[_key] = false;
 	                }
+	                if (this.props.onBlur) {
+	                    this.props.onBlur(this.value);
+	                }
 	            } else if (_type === 'focus') {
 	                _obj[_key] = false;
 	                if (this.refs[_ref]) {
 	                    this.refs[_ref].focus();
+	                }
+	                if (this.props.onFocus) {
+	                    this.props.onFocus(this.value);
 	                }
 	            }
 	            this.mutateState();
