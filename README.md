@@ -22,7 +22,7 @@ export default class Custom extends React.Component{
         return(
             <div className="parent-wrapper">
                 <LabelFloatInput  
-                    initialValue=""
+                    value=""
                     label="Enter your name here"
                     fontSize="16px"
                     fontFamily="monospace"
