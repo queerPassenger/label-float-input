@@ -124,13 +124,13 @@ module.exports =
 	    _createClass(LabelFloatInput, [{
 	        key: 'componentWillReceiveProps',
 	        value: function componentWillReceiveProps(nextProps) {
-	            if (nextProps.value && this.value) {
+	            if (typeof nextProps.value !== 'undefined') {
 	                if (nextProps.value !== this.value) {
 	                    this.value = nextProps.value;
 	                    this.labelPh = nextProps.value.length === 0 ? true : false;
+	                    this.mutateState();
 	                }
 	            }
-	            this.mutateState();
 	        }
 	    }, {
 	        key: 'mutateState',

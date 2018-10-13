@@ -50,13 +50,15 @@ export default class LabelFloatInput extends React.Component{
         }
     }
     componentWillReceiveProps(nextProps){
-        if(nextProps.value && this.value){
+        if(typeof nextProps.value!=='undefined'){
             if(nextProps.value!== this.value){
                 this.value=nextProps.value;
                 this.labelPh=nextProps.value.length===0?true:false;
+                this.mutateState();
             }
+            
         }
-        this.mutateState();
+        
     }
     mutateState(){
         this.setState({
