@@ -1,6 +1,6 @@
 {
   "name": "label-float-input",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
   "scripts": {
@@ -24,8 +24,5 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "webpack": "^1.15.0"
-  },
-  "peerDependencies": {
-    "react": "^15.6.2"
-  }
+  }  
 }

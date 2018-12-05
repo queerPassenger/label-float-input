@@ -80,7 +80,7 @@ module.exports =
 	        _this.value = props.value ? props.value : '';
 	        _this.label = props.label ? props.label : 'Enter the value';
 	        _this.labelPh = props.value ? props.value.length === 0 ? true : false : true;
-	        _this.color = props.color ? props.color : '#0564b2';
+	        _this.color = props.color ? props.color : 'black';
 	        _this.fontSize = props.fontSize ? props.fontSize : '15px';
 	        _this.fontFamily = props.fontFamily ? props.fontFamily : 'monospace';
 
