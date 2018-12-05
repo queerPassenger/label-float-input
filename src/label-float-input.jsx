@@ -10,7 +10,7 @@ export default class LabelFloatInput extends React.Component{
         this.value=props.value?props.value:'';
         this.label=props.label?props.label:'Enter the value';
         this.labelPh=props.value?(props.value.length===0?true:false):true;
-        this.color=props.color?props.color:'#0564b2';
+        this.color=props.color?props.color:'black';
         this.fontSize=props.fontSize?props.fontSize:'15px';
         this.fontFamily=props.fontFamily?props.fontFamily:'monospace';
 
